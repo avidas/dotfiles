@@ -1,0 +1,8 @@
+*
+!.bash*
+!.vim*
+!.tmux*
+!.screen*
+!.gitignore
+.viminfo
+.bash_history
