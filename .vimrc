@@ -1,3 +1,5 @@
+filetype plugin indent on
+syntax on
 color desert
 set nu
 set expandtab
