@@ -5,7 +5,7 @@ alias time='/usr/bin/time -v'
 alias skim="(head -8; echo; tail -8) <"
 
 # Full version, reverse while sorting, last modified
-alias ls='ls -lrth --color=auto -F'
+alias ls='ls -lrth -FG'
 
 # Similar to vim for cd 
 alias k='cd ..'
