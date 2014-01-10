@@ -6,7 +6,7 @@ set -euvx
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="bashrc bash_aliases bash_profile tmux.conf vimrc"
+files="bashrc bash_aliases bash_profile profile tmux.conf vimrc"
 
 echo -n "Create $olddir for backup of existing dotfiles in ~ ..."
 mkdir -p $olddir
@@ -23,5 +23,6 @@ for file in $files; do
   ln -s ${dir}/.${file} ~/.$file
 done
 
+ln -s .bashrc .profile
 
 
