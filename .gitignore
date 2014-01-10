@@ -4,5 +4,6 @@
 !.tmux*
 !.screen*
 !.gitignore
+!makesymlinks.sh
 .viminfo
 .bash_history
