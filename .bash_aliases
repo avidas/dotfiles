@@ -20,3 +20,6 @@ alias mkdir="mkdir -vp"
 
 # Disk usage summary
 alias dus="du | sort -nr | head -20 | cut -f2- | xargs du -hs"
+
+# git statuses together
+alias gitit="if [ -d ".git" ]; then git status; git branch; git remote -v; fi"

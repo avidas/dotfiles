@@ -38,5 +38,3 @@ if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
 
-# If directory is git repository then show basic details
-if [ -d ".git" ]; then git status; git branch; git remote -v; fi
