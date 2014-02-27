@@ -5,7 +5,7 @@ alias time='/usr/bin/time -v'
 alias skim="(head -8; echo; tail -8) <"
 
 # Full version, reverse while sorting, last modified
-alias ls='ls -lrth -FG'
+alias ls='ls -lrthFG'
 
 # Similar to vim for cd 
 alias k='cd ..'
@@ -20,3 +20,6 @@ alias mkdir="mkdir -vp"
 
 # Disk usage summary
 alias dus="du | sort -nr | head -20 | cut -f2- | xargs du -hs"
+
+# git status+branch+remotes
+alias gitit="if [ -d ".git" ]; then git status; git branch; git remote -v; fi"
