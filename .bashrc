@@ -11,6 +11,10 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/sbin/python2
 source $(which virtualenvwrapper_lazy.sh)
 #workon scratch
 
+#clang needs to know all flags for CPython build
+export CFLAGS=-Qunused-arguments
+export CPPFLAGS=-Qunused-arguments
+
 # Always enable GREP colors
 export GREP_OPTIONS='--color=auto'
 
