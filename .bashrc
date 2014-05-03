@@ -38,3 +38,12 @@ if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
 
+# Git auto completion
+if [ -f ~/git-completion.bash ]; then
+    . ~/git-completion.bash
+fi
+
+# PHP composer binaries (e.g. phpunit)
+if [ -d ~/.composer/vendor/bin/ ]; then
+      export PATH=$PATH:~/.composer/vendor/bin/
+fi

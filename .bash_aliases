@@ -26,4 +26,4 @@ if ! type "hub" > /dev/null; then
 fi
 
 # git status+branch+remotes
-alias gitit="if [ -d ".git" ]; then git status; git branch -a; git remote -v; fi"
+alias gitit="if [ -d ".git" ]; then git status; git branch -avv | grep -E 'ahead|behind'; git remote -v; fi"
