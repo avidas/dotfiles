@@ -11,6 +11,8 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/sbin/python2
 source $(which virtualenvwrapper_lazy.sh)
 #workon scratch
 
+export ANDROID_HOME="/Users/anadas/Downloads/adt-bundle-mac-x86_64-20131030/sdk"
+
 #clang needs to know all flags for CPython build
 export CFLAGS=-Qunused-arguments
 export CPPFLAGS=-Qunused-arguments
