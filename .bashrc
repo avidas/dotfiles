@@ -33,9 +33,6 @@ export HISTCONTROL=erasedups
 # Increase history size
 export HISTSIZE=10000
 
-# Append history from session to bash_history
-shopt -s histappend
-
 # Separate aliases file
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
