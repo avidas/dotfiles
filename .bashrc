@@ -24,6 +24,12 @@ export GREP_OPTIONS='--color=auto'
 shopt -s histappend
 export PROMPT_COMMAND='history -a'
 
+# Remove duplicates from history
+export HISTCONTROL=erasedups
+
+# Increase history size
+export HISTSIZE=10000
+
 #spellcheck typos in cd
 shopt -s cdspell
 
