@@ -19,6 +19,16 @@ export GREP_OPTIONS='--color=auto'
 
 #save command history for all terminals
 shopt -s histappend
+
+#more pattern matching
+shopt -s extglob
+
+#ensure * includes hidden files and folders
+shopt -s dotglob
+
+#make sure terminal lines wrap correctly after resizing
+shopt -s checkwinsize
+
 export PROMPT_COMMAND='history -a'
 
 #spellcheck typos in cd
