@@ -28,6 +28,8 @@ fi
 # git status+branch+remotes
 alias gitit="if [ -d ".git" ]; then git status; git branch -a; git remote -v; fi"
 
+alias update='sudo apt-get update && sudo apt-get upgrade'
+
 alias c="clear"
 
 ## get rid of command not found ##
