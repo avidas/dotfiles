@@ -27,3 +27,5 @@ fi
 
 # git status+branch+remotes
 alias gitit="if [ -d ".git" ]; then git status; git branch -avv | grep -E 'ahead|behind'; git remote -v; fi"
+
+alias c="clear"
