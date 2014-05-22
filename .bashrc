@@ -12,6 +12,9 @@ source $(which virtualenvwrapper_lazy.sh)
 #workon scratch
 
 export ANDROID_HOME="/Users/anadas/Downloads/adt-bundle-mac-x86_64-20131030/sdk"
+# added by Anaconda 1.9.2 installer
+export PATH="/Users/anadas/anaconda/bin:$PATH"
+export GOPATH="$HOME/src/golang/"
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/
 
 #clang needs to know all flags for CPython build
