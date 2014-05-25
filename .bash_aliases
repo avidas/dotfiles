@@ -10,7 +10,17 @@ alias ls='ls -lrthFG'
 # Similar to vim for cd 
 alias k='cd ..'
 
-alias lsdirs="ls -l | grep '^d'"
+# Do full set of processes
+alias ps="ps auxf"
+
+#Searchable process table, (e.g. psg bash) from digital ocean
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+# Continue download in case of problems
+alias wget="wget -c"
+
+# Similar to vim for cd 
+alias k='cd ..'
 
 # Show where you copy
 alias cp="cp -v"
