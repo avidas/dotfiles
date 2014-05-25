@@ -6,6 +6,18 @@ alias skim="(head -8; echo; tail -8) <"
 
 # Full version, reverse while sorting, last modified
 alias ls='ls -lrth --color=auto -F'
+alias sl='ls'
+# Longdir
+alias lsl="ls -lhFA | less"
+
+# Do full set of processes
+alias ps="ps auxf"
+
+#Searchable process table, (e.g. psg bash) from digital ocean
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+# Continue download in case of problems
+alias wget="wget -c"
 
 # Similar to vim for cd 
 alias k='cd ..'
