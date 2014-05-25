@@ -38,6 +38,14 @@ fi
 # git status+branch+remotes
 alias gitit="if [ -d ".git" ]; then git status; git branch -avv | grep -E 'ahead|behind'; git remote -v; fi"
 
+#git frequently used 
+alias ga="git add"
+alias gcm="git commit -m"
+alias gpo="git push origin"
+alias gpom="git push origin master"
+alias gcl="git clone"
+alias gra="git remote add"
+
 #git log better format
 alias gitl='git log --stat --graph --summary'
 alias gitll='git log --pretty="%C(auto)%h%Creset %C(auto)[%ci]%Creset %Cgreen[%cn]%Creset %s" --graph'
