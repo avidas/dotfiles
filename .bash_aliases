@@ -22,6 +22,9 @@ alias wget="wget -c"
 # Similar to vim for cd 
 alias k='cd ..'
 
+# Previous folder
+alias p='cd -'
+
 # Show where you copy
 alias cp="cp -v"
 
@@ -41,6 +44,7 @@ alias gitit="if [ -d ".git" ]; then git status; git branch -avv | grep -E 'ahead
 #git frequently used 
 alias ga="git add"
 alias gcm="git commit -m"
+alias gp="git push"
 alias gpo="git push origin"
 alias gpom="git push origin master"
 alias gcl="git clone"
