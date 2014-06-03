@@ -44,6 +44,7 @@ alias gpo="git push origin"
 alias gpom="git push origin master"
 alias gcl="git clone"
 alias gra="git remote add"
+alias gc="git checkout"
 
 # git status+branch+remotes
 alias gitit="if [ -d ".git" ]; then git status; git branch -a; git remote -v; fi"
