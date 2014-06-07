@@ -23,3 +23,8 @@ man() {
 top20() {
  history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -vE "./|\"|{|}|:|-|\[|\]" | column -c3 -s " " -t | sort -nr | nl | head -n20
  }
+
+#Remind that certain projects might be getting stale
+
+
+#Find files that might be junk
