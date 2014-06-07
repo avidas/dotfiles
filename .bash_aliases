@@ -49,6 +49,7 @@ alias gpo="git push origin"
 alias gpom="git push origin master"
 alias gcl="git clone"
 alias gra="git remote add"
+alias gc="git checkout"
 
 #git log better format
 alias gitl='git log --stat --graph --summary'
