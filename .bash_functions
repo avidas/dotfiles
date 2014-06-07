@@ -25,6 +25,8 @@ top20() {
  }
 
 #Remind that certain projects might be getting stale
-
+stale() {
+    find $HOME/src -type d -maxdepth 1 -mtime +30
+}
 
 #Find files that might be junk
