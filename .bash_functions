@@ -26,7 +26,8 @@ top20() {
 
 #Remind that certain projects might be getting stale
 stale() {
-    find $1 -type d -maxdepth 1 -mtime +30 -exec  
+    find $1 -type d -maxdepth 1 -mtime +30 -print0 | xargs -0 ls -ldtr
+
 }
 
 #Find files that might be junk and mail
