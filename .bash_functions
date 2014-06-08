@@ -26,7 +26,8 @@ top20() {
 
 #Remind that certain projects might be getting stale
 stale() {
-    find $HOME/src -type d -maxdepth 1 -mtime +30
+    find $1 -type d -maxdepth 1 -mtime +30 -exec  
 }
 
-#Find files that might be junk
+#Find files that might be junk and mail
+#alternatively just delete files with names that I know are junk
