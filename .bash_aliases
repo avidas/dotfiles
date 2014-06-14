@@ -5,7 +5,7 @@ alias time='/usr/bin/time -v'
 alias skim="(head -8; echo; tail -8) <"
 
 # Full version, reverse while sorting, last modified
-alias ls='ls -lrth --color=auto -F'
+alias ls='ls -lrtha --color=auto -F'
 alias sl='ls'
 # Longdir
 alias lsl="ls -lhFA | less"
