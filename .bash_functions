@@ -27,8 +27,10 @@ top20() {
 #Remind that certain projects might be getting stale
 stale() {
     find $1 -type d -maxdepth 1 -mtime +30 -print0 | xargs -0 ls -ldtr
-
 }
 
 #Find files that might be junk and mail
 #alternatively just delete files with names that I know are junk
+findjunk() {
+    find /Users/anadas/src/ -type d -mtime +90 -print0 | xargs -0 ls -ldtr | grep -E "tmp|junk"
+}
