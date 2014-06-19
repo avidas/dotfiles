@@ -43,6 +43,7 @@ alias gcm="git commit -m"
 alias gpo="git push origin"
 alias gpom="git push origin master"
 alias gcl="git clone"
+alias gr="git remote -v"
 alias gra="git remote add"
 alias gc="git checkout"
 
@@ -50,8 +51,11 @@ alias gc="git checkout"
 alias gitit="if [ -d ".git" ]; then git status; git branch -a; git remote -v; fi"
 #git log better format
 alias gitl='git log --stat --graph --summary'
+alias gl=gitl
 alias gitll='git log --pretty="%C(auto)%h%Creset %C(auto)[%ci]%Creset %Cgreen[%cn]%Creset %s" --graph'
+alias gll=gitll
 aliad gitd='git diff --minimal -b --color=always | less -R'
+alias gd='gitd'
 
 alias update='sudo apt-get update && sudo apt-get upgrade'
 
