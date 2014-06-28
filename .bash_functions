@@ -19,7 +19,47 @@ man() {
     man "$@"
 }
 
-#Lookup bash history and print top 20 most frequently used bash comments
+ #Lookup bash history and print top 20 most frequently used bash comments
 top20() {
  history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -vE "./|\"|{|}|:|-|\[|\]" | column -c3 -s " " -t | sort -nr | nl | head -n20
  }
+
+#Remind that certain projects might be getting stale
+stale() {
+    find $1 -type d -maxdepth 1 -mtime +30 -print0 | xargs -0 ls -ldtr
+}
+
+#Find files that might be junk and mail
+#alternatively just delete files with names that I know are junk
+findjunk() {
+    find /Users/anadas/src/ -type d -mtime +90 -print0 | xargs -0 ls -ldtr | grep -E "tmp|junk"
+}
+
+# Extract zip files of different types. Because http://xkcd.com/1168/
+# Source http://www.quora.com/Bash-shell/What-are-some-bash-aliases-that-you-use-often
+extract()                                               
+{                                                                                
+   if [ -f $1 ] ; then                                                           
+      case $1 in                                                                 
+   *.tar.bz2)   tar xvjf $1     ;;                                               
+   *.tar.gz)    tar xvzf $1     ;;                                               
+   *.bz2)       bunzip2 $1 ;;                                                    
+   *.rar) unrar x $1 ;;                                                          
+   *.gz) gunzip $1 ;;                                                            
+   *.tar) tar xvf $1 ;;                                                          
+   *.tbz2) tar xvjf $1 ;;                                                        
+   *.tgz) tar xvzf $1 ;;                                                         
+   *.zip) unzip $1 ;;                                                            
+   *.Z) uncompress $1 ;;                                                         
+   *.7z) 7z x $1 ;;                                                              
+   *) echo "'$1' cannot be extracted via >extract<" ;;                           
+      esac                                                                       
+   else                                                                          
+      echo "'$1' is not a valid file"                                            
+   fi                                                                            
+}
+
+unbase64()
+{   
+    echo $1 | base64 -d
+}
