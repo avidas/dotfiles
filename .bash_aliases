@@ -11,7 +11,7 @@ alias ls='ls -lrthFG'
 alias k='cd ..'
 
 # Do full set of processes
-alias ps="ps auxf"
+alias ps="ps"
 
 #Searchable process table, (e.g. psg bash) from digital ocean
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
