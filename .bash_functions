@@ -63,3 +63,18 @@ unbase64()
 {   
     echo $1 | base64 -d
 }
+
+
+# http://stackoverflow.com/questions/6759791/how-do-i-move-forward-and-backward-between-commits-in-git
+# Go forward in Git commit hierarchy, towards particular commit 
+# Usage:
+#  gofwd v1.2.7
+# Does nothing when the parameter is not specified.
+gofwd() {
+  git checkout `git rev-list --topo-order HEAD.."$*" | tail -1`
+}
+
+# Go back in Git commit hierarchy
+# Usage: 
+#  goback
+alias goback='git checkout HEAD~'
