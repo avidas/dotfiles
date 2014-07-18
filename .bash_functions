@@ -85,18 +85,18 @@ alias goback='git checkout HEAD~'
 gbisect() {
     if [ "$#" -ne 1 ]; then
         echo "gbisect good-commit-id bad-commit-id script <arguments>"
-        exit
+    else
+        git stash
+        git checkout HEAD
+        git bisect start
+        git bisect good $1
+        shift
+        git bisect bad $1
+        shift
+        git bisect run "$@"
+        git bisect log
+        git bisect reset
+        git stash list
+        git stash apply
     fi
-    git stash
-    git checkout HEAD
-    git bisect start
-    git bisect good $1
-    shift
-    git bisect bad $1
-    shift
-    git bisect run "$@"
-    git bisect log
-    git bisect reset
-    git stash list
-    git stash apply
 }
