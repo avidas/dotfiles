@@ -78,3 +78,25 @@ gofwd() {
 # Usage: 
 #  goback
 alias goback='git checkout HEAD~'
+
+# Stash current work and and git bisect with given good and 
+# bad commit ids, running given script that exits with 0 on failure
+# and positive number on success
+gbisect() {
+    if [ "$#" -ne 1 ]; then
+        echo "gbisect good-commit-id bad-commit-id script <arguments>"
+        exit
+    fi
+    git stash
+    git checkout HEAD
+    git bisect start
+    git bisect good $1
+    shift
+    git bisect bad $1
+    shift
+    git bisect run "$@"
+    git bisect log
+    git bisect reset
+    git stash list
+    git stash apply
+}
