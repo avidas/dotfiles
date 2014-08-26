@@ -63,3 +63,10 @@ unbase64()
 {   
     echo $1 | base64 -d
 }
+
+# In current directory, Recursive find and replace $1 with $2
+replaceall()
+{
+  echo $1 $2
+  grep -nirl $1 * | xargs sed -i "" -e 's/$1/$2/g'
+}

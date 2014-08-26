@@ -55,6 +55,7 @@ alias gc="git checkout"
 alias gitl='git log --stat --graph --summary'
 alias gitll='git log --pretty="%C(auto)%h%Creset %C(auto)[%ci]%Creset %Cgreen[%cn]%Creset %s" --graph'
 alias gitd='git diff --minimal -b --color=always | less -R'
+alias gitcbt=`git log --oneline $(echo git tag | tail -2 | head -1)...$(echo git tag | tail -1) | cut -d " " -f 2-`
 
 alias update='sudo apt-get update && sudo apt-get upgrade'
 
