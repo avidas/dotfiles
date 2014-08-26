@@ -64,6 +64,11 @@ unbase64()
     echo $1 | base64 -d
 }
 
+# In current directory, Recursive find and replace $1 with $2
+replaceall()
+{
+    grep -nirl $1 * | xargs sed -i "" -e 's/$1/$2/g'
+}
 
 # http://stackoverflow.com/questions/6759791/how-do-i-move-forward-and-backward-between-commits-in-git
 # Go forward in Git commit hierarchy, towards particular commit 
