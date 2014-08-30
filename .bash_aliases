@@ -62,6 +62,9 @@ alias gd='gitd'
 # get commit messages between last two git tags
 alias gitcbt=`git log --oneline $(echo git tag | tail -2 | head -1)...$(echo git tag | tail -1) | cut -d " " -f 2-`
 
+# Pip upgrade all local packages in virtualenv
+alias pip-upgrade='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
+
 alias update='sudo apt-get update && sudo apt-get upgrade'
 
 alias c="clear"
