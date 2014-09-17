@@ -105,3 +105,29 @@ gbisect() {
         git stash apply
     fi
 }
+
+# Git commit date modification
+# bash cdc.sh @~1 2014-07-04 20:32:45
+#
+# commit
+# date YYYY-mm-dd HH:MM:SS
+gitcdc()
+{
+  commit="$1" datecal="$2"
+  temp_branch="temp-rebasing-branch"
+  current_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+  date_timestamp=$(date -d "$datecal" +%s)
+  date_r=$(date -R -d "$datecal")
+
+  if [[ -z "$commit" ]]; then
+      exit 0
+  fi
+
+  git checkout -b "$temp_branch" "$commit"
+  GIT_COMMITTER_DATE="$date_timestamp" GIT_AUTHOR_DATE="$date_timestamp" git commit --amend --no-edit --date "$date_r"
+  git checkout "$current_branch"
+  git rebase --committer-date-is-author-date "$commit" --onto "$temp_branch"
+  git branch -d "$temp_branch"
+}
+
