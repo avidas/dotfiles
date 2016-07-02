@@ -1,3 +1,7 @@
+#
+# ~/.bash_functions
+#
+
 # Setup local branches to track all remote branches for a cloned repo
 cloneall(){
     for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master `;
@@ -95,3 +99,4 @@ gitcdc()
   git rebase --committer-date-is-author-date "$commit" --onto "$temp_branch"
   git branch -d "$temp_branch"
 }
+
