@@ -18,11 +18,11 @@ echo "done"
 
 for file in $files; do
   echo "Moving existing dotfiles from ~ to $olddir"
-  mv ~/.$file ${olddir}/
+  if [ -f ~/.$file ]; then
+    mv ~/.$file ${olddir}/
+  fi
   echo "Creating symlink to $file in home dir."
-  ln -s ${dir}/.${file} ~/.$file
+  if [ -f ${dir}/.${file} ]; then
+    ln -s ${dir}/.${file} ~/.$file
+  fi
 done
-
-ln -s .bashrc .profile
-
-
