@@ -103,3 +103,6 @@ alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
 alias tmux-split="sh ~/dotfiles/.tmux-split.sh"
+
+## Ruby
+alias be='bundle exec'
