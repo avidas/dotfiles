@@ -80,6 +80,7 @@ alias gra="git remote add"
 alias gd="git diff"
 alias gc="git checkout"
 alias gcl="git clone"
+alias gst="git status"
 
 #git log better format
 alias gitl='git log --stat --graph --summary'
